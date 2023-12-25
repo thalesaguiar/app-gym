@@ -6,6 +6,7 @@ import {
 import { Text, View, StatusBar } from "react-native";
 import { TamaguiProvider } from "@tamagui/core";
 import config from "./tamagui.config";
+import { Loading } from "@components/Loading";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
@@ -26,11 +27,11 @@ export default function App() {
             translucent
           />
           {fontsLoaded ? (
-            <Text style={{ fontFamily: "Roboto_700Bold", color: "#fff" }}>
-              Teste
-            </Text>
+            <Text
+              style={{ fontFamily: "Roboto_700Bold", color: "#fff" }}
+            ></Text>
           ) : (
-            <View />
+            <Loading />
           )}
         </View>
       }
